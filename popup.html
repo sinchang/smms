@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SMMS图床</title>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/clipboard.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+<form id="upload">
+	<input type="file" name="smfile" id="smfile" accept="image/*">
+	<label for="smfile">选择文件…</label>
+	<input type="submit" value="上传" class="copy btn">
+	<div class="loading">
+		<img src="http://ooo.0o0.ooo/2016/01/06/568d158e65e97.gif">
+	</div>
+	<div class="img">
+		<img src="">
+		<span class="tooltips">复制成功!!!</span>
+		<span class="label">URL:</span>
+		<input class="showUrl1" id="foo1" value="" data-tooltips="复制成功"></input>
+		<span class="copy" data-clipboard-action="cut" data-clipboard-target="#foo1">复制</span>
+		<span class="label">Markdown:</span>
+		<input class="showUrl2" id="foo2" value=""></input>
+		<span class="copy" data-clipboard-action="cut" data-clipboard-target="#foo2">复制</span>
+	</div>
+</form>
+<div class="footer">
+	<p>感谢<a href="https://sm.ms" target="_blank"> sm.ms </a>提供的api</p>
+</div>
+</body>
+</html>

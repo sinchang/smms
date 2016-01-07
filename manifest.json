@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "SMMS图床",
+    "description": "一个简单实用的图床插件",
+    "version": "1.0",
+    "icons": {
+        "48": "images/icon48.png"
+    },
+    "permissions": [
+        "https://sm.ms/*/",
+        "tabs"
+    ],
+    "background": {
+        "persistent": false,
+        "scripts": ["js/background.js"]
+    },
+    "browser_action": {
+        "default_icon": "images/icon48.png",
+        "default_title": "SMMS图床"
+    }
+}
