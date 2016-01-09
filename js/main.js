@@ -17,7 +17,7 @@ $(function() {
 			$label = $input.next('label'),
 			labelVal = $label.html();
 		$input.on('change', function(e) {
-			$(".tooltips").hide(); //再次上传文件提示消失
+			$(".img").hide();
 			if (e.target.value) {
 				fileName = e.target.value.split('\\').pop();
 			}
