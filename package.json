@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "name": "smms",
+  "description": "My pioneering Vue app",
+  "version": "0.0.0",
+  "repository": {},
+  "scripts": {
+    "test": "echo lol",
+    "lint": "vbuild --eslint",
+    "dev": "vbuild -d",
+    "build": "vbuild",
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "clipboard": "^1.6.1",
+    "gh-pages": "^0.12.0",
+    "native-toast": "^1.1.0",
+    "nprogress": "^0.2.0",
+    "unfetch": "^2.1.2",
+    "vbuild": "^6.0.0",
+    "vue-img-inputer": "^1.0.23"
+  },
+  "license": "MIT"
+}
