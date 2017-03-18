@@ -9,7 +9,7 @@
     "lint": "vbuild --eslint",
     "dev": "vbuild -d",
     "build": "vbuild",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "devDependencies": {
     "clipboard": "^1.6.1",
