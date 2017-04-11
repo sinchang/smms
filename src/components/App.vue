@@ -35,9 +35,7 @@
     methods: {
       cb(file) {
         this.url = ''
-        console.log(NProgress)
         NProgress.inc()
-        debugger;
         fetch('https://sm.ms/api/upload?ssl=true', {
           method: 'POST',
           headers: {
