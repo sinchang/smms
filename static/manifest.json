@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "SMMS图床",
   "description": "一个简单实用的图床插件",
-  "version": "1.3",
+  "version": "1.4",
   "icons": {
     "48": "images/icon48.png"
   },

@@ -41,6 +41,7 @@
     methods: {
       cb(file) {
         const formData = new FormData(document.getElementById('form'))
+        formData.append('smfile', file)
         this.url = ''
         NProgress.inc()
         fetch('https://sm.ms/api/upload?ssl=true', {
