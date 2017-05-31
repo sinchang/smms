@@ -12,13 +12,15 @@
     "deploy": "npm run build && gh-pages -d dist"
   },
   "devDependencies": {
-    "clipboard": "^1.6.1",
     "gh-pages": "^0.12.0",
+    "vbuild": "^6.0.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "clipboard": "^1.6.1",
     "native-toast": "^1.1.0",
     "nprogress": "^0.2.0",
     "unfetch": "^2.1.2",
-    "vbuild": "^6.0.0",
-    "vue-img-inputer": "^1.0.23"
-  },
-  "license": "MIT"
+    "vue-img-inputer": "^1.1.0"
+  }
 }

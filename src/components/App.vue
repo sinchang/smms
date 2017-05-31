@@ -1,7 +1,12 @@
 <template>
   <div id="app">
     <form id="form">
-      <VueImgInputer theme="light" :onChange="cb" name="smfile"></VueImgInputer>
+      <VueImgInputer
+        theme="light"
+        :onChange="cb"
+        name="smfile"
+      >
+      </VueImgInputer>
     </form>
     <div class="text-wrap">
       <span class="text" :data-clipboard-text="url" @mouseover="initClipboard"
@@ -24,7 +29,8 @@
     name: 'app',
     data() {
       return {
-        url: ''
+        url: '',
+        accept: 'image/png,image/jpg;'
       }
     },
     computed: {
@@ -34,13 +40,12 @@
     },
     methods: {
       cb(file) {
+        const formData = new FormData(document.getElementById('form'))
         this.url = ''
         NProgress.inc()
         fetch('https://sm.ms/api/upload?ssl=true', {
           method: 'POST',
-          headers: {
-          },
-          body: new FormData(document.getElementById('form'))
+          body: formData
         }).then( r => r.json() )
           .then( res => {
             NProgress.done()
