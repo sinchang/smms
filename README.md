@@ -14,6 +14,10 @@
 
 [![](http://ooo.0o0.ooo/2016/01/07/568e149dc5536.png)](https://chrome.google.com/webstore/detail/smms%E5%9B%BE%E5%BA%8A/jfnojkljiahflcnlodkicgfbofclmdoi)
 
+### 更新记录
+
+- 1.5：支持粘贴上传
+
 ### 感谢
 
 - [SM.MS](http://SM.MS)

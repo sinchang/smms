@@ -5,6 +5,7 @@
         theme="light"
         :onChange="cb"
         name="smfile"
+        :imgSrc="imgSrc"
       >
       </VueImgInputer>
     </form>
@@ -15,6 +16,7 @@
         @mouseout="destroyClipboard" v-if="url">{{markdownUrl}}</span>
     </div>
     <p class="copyright">感谢<a href="https://sm.ms" target="_blank"> sm.ms </a>提供的api | made with <a href="https://github.com/sinchang">sinchang</a></p>
+    <div id="paste" class="paste"></div>
   </div>
 </template>
 
@@ -24,13 +26,17 @@
   import Clipboard from 'clipboard'
   import toast from 'native-toast'
   import NProgress from 'nprogress'
+  import ImageClipboard from '../imageClipboard'
+  import b64toBlob from '../b64toBlob'
 
   export default {
     name: 'app',
     data() {
       return {
         url: '',
-        accept: 'image/png,image/jpg;'
+        accept: 'image/png,image/jpg;',
+        imgSrc: '',
+        flag: true
       }
     },
     computed: {
@@ -51,6 +57,11 @@
           .then( res => {
             NProgress.done()
             this.url = res.data.url
+            this.flag = true
+          }).catch(err => {
+            alert('出错了 😭')
+            this.flag = true
+            console.log(err)
           })
       },
       initClipboard({currentTarget}) {
@@ -67,7 +78,16 @@
           this.clipboard.destroy()
           this.clipboard = null
         }
-      },
+      }
+    },
+    mounted() {
+      const clipboard = new ImageClipboard('#paste')
+      clipboard.onpaste = (base64) => {
+        if (!this.flag) return
+        this.flag = false
+        this.imgSrc = 'data:image/png;base64,' + base64
+        this.cb(b64toBlob(base64))
+      }
     },
     components: {
       VueImgInputer
@@ -116,5 +136,14 @@
   }
   .copyright {
     text-align: center;
+  }
+
+  .paste {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 </style>
