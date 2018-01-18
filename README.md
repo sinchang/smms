@@ -4,7 +4,7 @@
 
 一个简单实用的图床 Chrome 插件，利用 sm.ms 的 api，自动生成 url、markdown 格式，点击一键复制。
 
-[在线版本](http://smms.sinchang.me)
+[在线版本](http://smms.netlify.com/)
 
 ### 截图
 
